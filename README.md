@@ -20,6 +20,6 @@ This repository hosts the static entry point, gateway routes, and privacy statem
 
 ## License
 
-Copyright (c) 2026 innocous. All rights reserved.
+Copyright (c) 2026 innocous06. All rights reserved.
 
 Proprietary. Web assets for 600266.xyz are not licensed for public redistribution.

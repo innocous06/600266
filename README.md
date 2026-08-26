@@ -23,3 +23,10 @@ This repository hosts the static entry point, gateway routes, and privacy statem
 Copyright (c) 2026 innocous06. All rights reserved.
 
 Proprietary. Web assets for 600266.xyz are not licensed for public redistribution.
+
+
+## Edge Architecture
+
+- Global CDN caching with Cloudflare Pages
+- Instant cache invalidation on deployment
+- Automatic brotli and gzip compression

@@ -722,6 +722,14 @@
         <a href="privacy.html" style="color:inherit;text-decoration:none;">privacy</a> <span>&copy; 2026</span>
     </footer>
 
+
+    <script>
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.activeElement && document.activeElement.blur();
+      }
+    });
+    </script>
 </body>
 
 </html>

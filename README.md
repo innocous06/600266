@@ -7,9 +7,10 @@ The official static web gateway and routing repository for [600266.xyz](https://
 This repository hosts the static entry point, gateway routes, and privacy statements for the `600266.xyz` domain. Deployed and served globally via Cloudflare Pages.
 
 ## Routes
-
+ 
 - `/` (`index.html`) - Main gateway and presence hub
 - `/portfolio` (`portfolio.html`) - Systems engineering portfolio
+- `/portfoliov2` (`portfoliov2.html`) - ASCII morph systems portfolio v2
 - `/privacy` (`privacy.html`) - Privacy notice
 - `/404` (`404.html`) - Not found fallback
 

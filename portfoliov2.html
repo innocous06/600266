@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="canonical" href="https://600266.xyz/portfoliov2" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=4" />
-  <title>Dharmanshu Kumar — developing the obvious</title>
+  <title>Dharmanshu Kumar - developing the obvious</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Fredoka:wght@500;600&family=JetBrains+Mono:wght@400;500;700&family=Nunito:wght@600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/portfolio/style.css" />
   <style>
 /* ============================================================
-   ASCII MORPH PORTFOLIO — INLINE CSS (ZERO CACHE DELAYS)
+   ASCII MORPH PORTFOLIO - INLINE CSS (ZERO CACHE DELAYS)
    ============================================================ */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -237,11 +237,11 @@ h1.hero-name {
 
 .tech-column.col-1 .tech-card,
 .tech-column.col-2 .tech-card {
-  height: 10.93vh;
+  height: 7.37vh;
 }
 
 .tech-column.col-3 .tech-card {
-  height: 8.855vh;
+  height: 6.26vh;
 }
 
 .tech-card {
@@ -268,17 +268,19 @@ h1.hero-name {
 }
 
 .tech-card-name {
-  font-size: clamp(12px, 1.1vw, 14.5px);
+  font-size: clamp(11px, 1.0vw, 13.5px);
   font-weight: 600;
   letter-spacing: -0.01em;
   color: #f0f0ee;
+  white-space: nowrap;
 }
 
 .tech-card-badge {
-  font-size: clamp(9px, 0.8vw, 10.5px);
-  letter-spacing: 0.04em;
+  font-size: clamp(8.5px, 0.72vw, 10px);
+  letter-spacing: 0.03em;
   opacity: 0.55;
   font-family: var(--font);
+  white-space: nowrap;
 }
 
 /* ── 3: PROJECTS (Interactive 3x2 Grid Over Boxes) ─────────── */
@@ -376,6 +378,7 @@ h1.hero-name {
 .p-pos-3 { left: 68.5vw; top: 24vh; }
 .p-pos-4 { left: 6vw; top: 58vh; }
 .p-pos-5 { left: 37.25vw; top: 58vh; }
+.p-pos-6 { left: 68.5vw; top: 58vh; }
 .p-inspect {
   font-size: 10px;
   font-weight: 700;
@@ -705,9 +708,9 @@ h1.hero-name {
       <!-- 1: About (Top Right) -->
       <div class="section-copy about-copy" data-section="1">
         <h2>A bit about me</h2>
-        <p>I'm mildly obsessed with the idea that most software has too many dependencies and too little control. So I started building the layer underneath — the networking, the databases, the parts nobody thinks about until they break.</p>
-        <p>I like problems where "it works" isn't the finish line — where you also need to know why it works, what happens when the network lies to you, or what breaks first under load. That's led me down a lot of rabbit holes: kernel-level packet tunneling, on-device ML, and enough small self-hosted tools that I've basically become my own IT department.</p>
-        <p>If it involves networking, databases, or an excuse to avoid a dependency, I've probably already built it — right alongside an unreasonable number of small tools nobody asked for.</p>
+        <p>I'm mildly obsessed with the idea that most software has too many dependencies and too little control. So I started building the layer underneath - the networking, the databases, the parts nobody thinks about until they break.</p>
+        <p>I like problems where "it works" isn't the finish line - where you also need to know why it works, what happens when the network lies to you, or what breaks first under load. That's led me down a lot of rabbit holes: kernel-level packet tunneling, on-device ML, and enough small self-hosted tools that I've basically become my own IT department.</p>
+        <p>If it involves networking, databases, or an excuse to avoid a dependency, I've probably already built it - right alongside an unreasonable number of small tools nobody asked for.</p>
         <p>That said, code is the part of my life I happen to be good at, not the whole of it. I build things because it's genuinely fun, not because I'm chasing a personality around a GitHub graph. Based in the Himalayas, which does wonders for perspective when your code doesn't compile.</p>
       </div>
 
@@ -717,7 +720,7 @@ h1.hero-name {
           <h2>Tools of the trade</h2>
         </div>
         <div class="tech-grid-wrapper">
-          <!-- Col 1: SYSTEMS & CORE (5 items for 5 ASCII blocks) -->
+          <!-- Col 1: SYSTEMS & CORE (7 items for 7 ASCII blocks) -->
           <div class="tech-column col-1">
             <div class="tech-col-header">
               <span class="tech-col-num">01 //</span>
@@ -734,7 +737,7 @@ h1.hero-name {
               </div>
               <div class="tech-card">
                 <span class="tech-card-name">Kotlin</span>
-                <span class="tech-card-badge">Android · Native</span>
+                <span class="tech-card-badge">Android Native</span>
               </div>
               <div class="tech-card">
                 <span class="tech-card-name">TypeScript</span>
@@ -744,10 +747,18 @@ h1.hero-name {
                 <span class="tech-card-name">Go</span>
                 <span class="tech-card-badge">Concurrency · Net</span>
               </div>
+              <div class="tech-card">
+                <span class="tech-card-name">Nginx</span>
+                <span class="tech-card-badge">Reverse Proxy · TLS Termination</span>
+              </div>
+              <div class="tech-card">
+                <span class="tech-card-name">systemd</span>
+                <span class="tech-card-badge">Service Management</span>
+              </div>
             </div>
           </div>
 
-          <!-- Col 2: BACKEND & DATA (5 items for 5 ASCII blocks) -->
+          <!-- Col 2: BACKEND & DATA (7 items for 7 ASCII blocks) -->
           <div class="tech-column col-2">
             <div class="tech-col-header">
               <span class="tech-col-num">02 //</span>
@@ -774,10 +785,18 @@ h1.hero-name {
                 <span class="tech-card-name">QUIC &amp; WireGuard</span>
                 <span class="tech-card-badge">mTLS · Encrypted</span>
               </div>
+              <div class="tech-card">
+                <span class="tech-card-name">WebSockets</span>
+                <span class="tech-card-badge">Real-Time · Telemetry</span>
+              </div>
+              <div class="tech-card">
+                <span class="tech-card-name">Firebase / Firestore</span>
+                <span class="tech-card-badge">NoSQL · Real-Time Sync</span>
+              </div>
             </div>
           </div>
 
-          <!-- Col 3: MOBILE, AI & INFRA (6 items for 6 ASCII blocks) -->
+          <!-- Col 3: MOBILE, AI & INFRA (8 items for 8 ASCII blocks) -->
           <div class="tech-column col-3">
             <div class="tech-col-header">
               <span class="tech-col-num">03 //</span>
@@ -808,6 +827,14 @@ h1.hero-name {
                 <span class="tech-card-name">OCI (Oracle Cloud)</span>
                 <span class="tech-card-badge">VPC · Cloud Nodes</span>
               </div>
+              <div class="tech-card">
+                <span class="tech-card-name">Cloudflare Workers</span>
+                <span class="tech-card-badge">Edge Compute · KV</span>
+              </div>
+              <div class="tech-card">
+                <span class="tech-card-name">GPU Data Pipelines</span>
+                <span class="tech-card-badge">cuML · CuPy</span>
+              </div>
             </div>
           </div>
         </div>
@@ -825,7 +852,7 @@ h1.hero-name {
             <p class="p-desc">Hackathon AI supply-chain platform; built backend hazard logic and mobile integration.</p>
           </div>
           <div class="proj-box p-pos-2" data-proj-idx="1" role="button" tabindex="0">
-            <div class="p-top"><span class="p-title">shadowlink / tunnel-prot-1</span><span class="p-arrow">↗</span></div>
+            <div class="p-top"><span class="p-title">shadowlink / tunnel</span><span class="p-arrow">↗</span></div>
             <div class="p-tag">Rust · Go · QUIC · mTLS</div>
             <p class="p-desc">DPI-resistant VPN tunnel, built in both Rust and Go with different evasion strategies.</p>
           </div>
@@ -835,19 +862,19 @@ h1.hero-name {
             <p class="p-desc">On-device Android app for real-time hearing-damage monitoring via TensorFlow Lite.</p>
           </div>
           <div class="proj-box p-pos-4" data-proj-idx="3" role="button" tabindex="0">
-            <div class="p-top"><span class="p-title">HyperShare</span><span class="p-arrow">↗</span></div>
-            <div class="p-tag">Node.js · Express · Wi-Fi 6</div>
-            <p class="p-desc">87 MB/s peer-to-peer LAN file transfer with zero cloud dependency.</p>
+            <div class="p-top"><span class="p-title">Raft KV</span><span class="p-arrow">↗</span></div>
+            <div class="p-tag">Go · Raft Consensus · WAL · Chaos Testing</div>
+            <p class="p-desc">Distributed key-value store implementing Raft consensus from scratch, verified against a chaos harness that kills nodes mid-write.</p>
           </div>
           <div class="proj-box p-pos-5" data-proj-idx="4" role="button" tabindex="0">
-            <div class="p-top"><span class="p-title">urlshrtnr</span><span class="p-arrow">↗</span></div>
-            <div class="p-tag">Node.js · node:sqlite · Nginx</div>
-            <p class="p-desc">Self-hosted URL shortener I run in production for myself; sub-30MB footprint, real TLS.</p>
+            <div class="p-top"><span class="p-title">entity-linker</span><span class="p-arrow">↗</span></div>
+            <div class="p-tag">Python · cuML · CuPy · MinHash LSH</div>
+            <p class="p-desc">GPU-accelerated record-linkage pipeline matching 1M+ noisy listings; built solo after confirming our hardware couldn't clear the bar.</p>
           </div>
           <div class="proj-box p-pos-6" data-proj-idx="5" role="button" tabindex="0">
             <div class="p-top"><span class="p-title">Small Tools, Big Range</span><span class="p-arrow">↗</span></div>
-            <div class="p-tag">Python · Aria2 · C · CLI</div>
-            <p class="p-desc">A grab-bag of self-contained utilities: cloud automation pipelines, solvers, and snake.</p>
+            <div class="p-tag">Python · Node.js · Aria2 · Terminal/CLI</div>
+            <p class="p-desc">A grab-bag of self-contained utilities: cloud pipelines, LAN transfer, a URL shortener, solvers, and snake.</p>
           </div>
         </div>
       </div>

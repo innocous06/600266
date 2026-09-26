@@ -1,5 +1,5 @@
 /* ============================================================
-   ASCII MORPH PORTFOLIO — script.js
+   ASCII MORPH PORTFOLIO - script.js
    Exact-fidelity ASCII portrait + Full-Screen Chaos Spam Morph
    + Centered Geometric Backgrounds & Live Animations.
    ============================================================ */
@@ -769,12 +769,12 @@ const PROJECTS_DATA = [
   },
   {
     num: '02',
-    title: 'shadowlink / tunnel-prot-1',
+    title: 'shadowlink / tunnel',
     subtitle: 'kernel & transport vpn',
     oneliner: 'DPI-resistant VPN tunnel, built in both Rust and Go with different evasion strategies.',
     tags: ['Rust', 'Go', 'QUIC', 'mTLS', 'Curve25519', 'ChaCha20-Poly1305'],
-    summary: 'Built the same VPN twice on purpose — once in Rust for the memory-safety purists, once in Go with QUIC for raw speed. One disguises itself as normal HTTPS and serves decoy websites to anyone snooping; the other punches through firewalls at the kernel level across Windows, Linux, and Android. Same obsession, two different ways of solving it.',
-    github: 'https://github.com/innocous06/tunnel-prot-1'
+    summary: 'Built the same VPN twice on purpose - once in Rust for the memory-safety purists, once in Go with QUIC for raw speed. One disguises itself as normal HTTPS and serves decoy websites to anyone snooping; the other punches through firewalls at the kernel level across Windows, Linux, and Android. Same obsession, two different ways of solving it.',
+    github: 'https://github.com/innocous06/tunnel'
   },
   {
     num: '03',
@@ -782,35 +782,35 @@ const PROJECTS_DATA = [
     subtitle: 'on-device hearing safety',
     oneliner: 'On-device Android app for real-time hearing-damage monitoring via TensorFlow Lite.',
     tags: ['Kotlin', 'Jetpack Compose', 'TensorFlow Lite', 'Room/SQLite'],
-    summary: 'Turns your phone into a lab-grade hearing-damage detector — real-time decibel metering, on-device ML sound classification, OSHA-standard dose tracking, zero cloud involved. Your ears will thank you; your battery might not.',
+    summary: 'Turns your phone into a lab-grade hearing-damage detector - real-time decibel metering, on-device ML sound classification, OSHA-standard dose tracking, zero cloud involved. Your ears will thank you; your battery might not.',
     github: 'https://github.com/innocous06/NoiseStash'
   },
   {
     num: '04',
-    title: 'HyperShare',
-    subtitle: 'p2p lan streaming engine',
-    oneliner: '87 MB/s peer-to-peer LAN file transfer with zero cloud dependency.',
-    tags: ['Node.js', 'Express', 'Wi-Fi 6', 'pkg Executable'],
-    summary: "AirDrop for people who don't trust Apple or the cloud. Skips TLS handshakes and multipart parsing entirely to hit 87 MB/s straight over Wi-Fi 6 — file transfer with zero patience for anything standing between point A and point B.",
-    github: 'https://github.com/innocous06/HyperShare'
+    title: 'Raft KV',
+    subtitle: 'distributed consensus & wal',
+    oneliner: 'Distributed key-value store implementing Raft consensus from scratch, verified against a chaos harness that kills nodes mid-write.',
+    tags: ['Go', 'Raft Consensus', 'WAL', 'CRC32', 'Chaos Testing'],
+    summary: 'Built a fault-tolerant key-value store from first principles - no consensus library, no shortcuts. Leader election with randomized timeouts, log replication with strict term-matching, snapshot installation for log compaction, and a checksummed write-ahead log that survives a SIGKILL mid-write without corrupting state. Then built a chaos harness to actively try to break it: network partitions, asymmetric packet drops, nodes dying at the worst possible moment. Found and fixed real split-brain and stale-read bugs before calling it done.',
+    github: 'https://github.com/innocous06/raft-kv'
   },
   {
     num: '05',
-    title: 'urlshrtnr',
-    subtitle: 'self-hosted production service',
-    oneliner: 'Self-hosted URL shortener I run in production for myself; sub-30MB footprint, real TLS.',
-    tags: ['Node.js', 'node:sqlite', 'Nginx', 'PM2', "Let's Encrypt"],
-    summary: "Not trying to sell you a URL shortener — this is the thing I actually run for myself, self-hosted on a VPS behind Nginx with real TLS, using Node's built-in SQLite instead of dragging in a database server for something this small. Proof I can deploy and operate infrastructure, not just write code that works on my laptop.",
-    github: 'https://github.com/innocous06/urlshrtnr'
+    title: 'entity-linker',
+    subtitle: 'gpu-accelerated record linkage',
+    oneliner: "GPU-accelerated record-linkage pipeline matching 1M+ noisy listings; built solo after confirming our hardware couldn't clear the bar.",
+    tags: ['Python', 'cuML', 'CuPy', 'MinHash LSH', 'RapidFuzz', 'TF-IDF'],
+    summary: 'A team hackathon challenge to match 1M+ noisy, inconsistently formatted product listings - I ended up building the entire pipeline myself. Two-tier blocking (brand partition + MinHash LSH over 5-gram shingles) cut 500 billion naive comparisons down to under 8 million candidate pairs, then GPU-accelerated TF-IDF cosine similarity and RapidFuzz string scoring ranked what was left, with attribute penalties to stop "pack of 2" from matching "pack of 8." Called the submission off myself once I\'d confirmed our hardware couldn\'t hit the evaluation threshold in time - the pipeline worked, the constraint was compute, not logic.',
+    github: 'https://github.com/innocous06/entity-linker'
   },
   {
     num: '06',
     title: 'Small Tools, Big Range',
     subtitle: 'cloud pipelines & algorithms',
-    oneliner: 'A grab-bag of self-contained utilities: cloud automation pipelines, a production URL shortener, and classic CS problems solved cleanly in C and Python.',
-    tags: ['Python', 'Aria2', 'Google Drive API', 'C', 'Terminal/CLI'],
-    summary: 'Not every project needs to be a thesis. These are the "I had a problem at 1am and fixed it before going to bed" tools — a cloud pipeline that pulls from OneDrive and Google Drive and handles Cloudflare\'s attitude problem along the way, a maze generator that solves its own mazes, and a terminal snake game with a deque under the hood because arrays felt too slow for a snake. Small, sharp, done.',
-    github: 'https://github.com/innocous06?tab=repositories'
+    oneliner: 'A grab-bag of self-contained utilities: cloud pipelines, LAN transfer, a URL shortener, solvers, and snake.',
+    tags: ['Python', 'Node.js', 'Aria2', 'Google Drive API', 'C', 'Terminal/CLI'],
+    summary: 'Not every project needs to be a thesis. These are the "I had a problem at 1am and fixed it before going to bed" tools - a cloud pipeline that pulls from OneDrive and Google Drive and handles Cloudflare\'s attitude problem along the way, a LAN file-transfer tool that skips TLS handshakes entirely to hit 87 MB/s over Wi-Fi 6, a self-hosted URL shortener running in production behind Nginx with real TLS, a maze generator that solves its own mazes, and a terminal snake game with a deque under the hood because arrays felt too slow for a snake. Small, sharp, done.',
+    github: 'https://github.com/innocous06'
   }
 ];
 
@@ -1186,7 +1186,7 @@ let lastVideoCols = 0;
 let lastVideoRows = 0;
 
 function scene_video_fallback(c, W, H) {
-  // Ambient dark cinematic void — NO sun, tunnel, or horizontal line
+  // Ambient dark cinematic void - NO sun, tunnel, or horizontal line
 }
 
 function ensureVideoPlay() {
@@ -1231,8 +1231,8 @@ function scene_tech(c, W, H) {
     c.lineWidth = Math.max(1, H * 0.013);
     c.strokeRect(cl, colTop, colW, colH);
 
-    // Number of skills: 5 in col 0 & 1, 6 in col 2
-    const numItems = ci === 2 ? 6 : 5;
+    // Number of skills: 7 in col 0 & 1, 8 in col 2
+    const numItems = ci === 2 ? 8 : 7;
     const headerH = colH * 0.08;
     const cardsStartY = colTop + headerH + colH * 0.02;
     const availH = (colTop + colH) - cardsStartY - colH * 0.02;
@@ -1560,7 +1560,7 @@ function lerpColor(ca, cb, t) {
 
 /* ─── VIBRANT LIVE IDLE ANIMATIONS ──────────────────────────── */
 
-// 0: Hero Idle Animation — Lively contour sparkles, celestial rays & drifting stardust
+// 0: Hero Idle Animation - Lively contour sparkles, celestial rays & drifting stardust
 function idleHero(t, cols, rows) {
   const cells = [];
   const aspect = cellH / cellW;
@@ -1649,7 +1649,7 @@ function idleHero(t, cols, rows) {
   return cells;
 }
 
-// 1: About Idle Animation — Distributed telemetry orbits, radar sonar pulses & drifting [about] / [me] badges
+// 1: About Idle Animation - Distributed telemetry orbits, radar sonar pulses & drifting [about] / [me] badges
 function idleAbout(t, cols, rows) {
   const cells = [];
   const aspect = cellH / cellW;
@@ -1761,7 +1761,7 @@ function idleAbout(t, cols, rows) {
   return cells;
 }
 
-// 2: Tech Idle Animation — Inter-column data streams + Medium-Sized Falling Meteorites
+// 2: Tech Idle Animation - Inter-column data streams + Medium-Sized Falling Meteorites
 function idleTech(t, cols, rows) {
   const cells = [];
   const techChars = ['0','1','<','>','/','\\','|','{','}','[',']','=','#','$','~','^'];
@@ -1859,7 +1859,7 @@ function idleTech(t, cols, rows) {
   return cells;
 }
 
-// 3: Projects Idle Animation — Animated circuit telemetry packets & cruising spaceships
+// 3: Projects Idle Animation - Animated circuit telemetry packets & cruising spaceships
 function idleProjects(t, cols, rows) {
   const cells = [];
   const colCenter = Math.floor(cols * 0.50);
@@ -1872,7 +1872,7 @@ function idleProjects(t, cols, rows) {
   const cRight    = Math.floor(cols * 0.8125);
   const halfW     = Math.max(10, colCenter - cLeft);
 
-  // 1. Central Vertical Trunk — Packets routing downward & upward
+  // 1. Central Vertical Trunk - Packets routing downward & upward
   for (let p = 0; p < 3; p++) {
     const rDist = Math.floor((t * 13 + p * (trunkLen / 3)) % trunkLen);
     const r = trunkTop + rDist;
@@ -1885,7 +1885,7 @@ function idleProjects(t, cols, rows) {
     cells.push({ col: colCenter, row: r, char: '^', alpha: 0.80 });
   }
 
-  // 2. Horizontal Cross Branches — Lateral data packets feeding the 6 project cards
+  // 2. Horizontal Cross Branches - Lateral data packets feeding the 6 project cards
   for (let p = 0; p < 2; p++) {
     const dL1 = Math.floor((t * 16 + p * (halfW / 2)) % halfW);
     cells.push({ col: colCenter - dL1, row: rowTop, char: '<', alpha: 0.80 });
@@ -2064,7 +2064,7 @@ function idleProjects(t, cols, rows) {
   return cells;
 }
 
-// 4: Certs Idle Animation — Radiating sunburst rays & celestial shine from medal badge
+// 4: Certs Idle Animation - Radiating sunburst rays & celestial shine from medal badge
 function idleCerts(t, cols, rows) {
   const cells = [];
   const aspect = cellH / cellW;
@@ -2191,7 +2191,7 @@ function idleCerts(t, cols, rows) {
   return cells;
 }
 
-// 5: Contact Idle Animation — Radar sweep + traveling telemetry packet pings
+// 5: Contact Idle Animation - Radar sweep + traveling telemetry packet pings
 function idleContact(t, cols, rows) {
   const cells = [];
   const aspect = cellH / cellW;

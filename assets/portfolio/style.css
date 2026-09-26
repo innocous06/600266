@@ -1,5 +1,5 @@
 /* ============================================================
-   ASCII MORPH PORTFOLIO — style.css
+   ASCII MORPH PORTFOLIO - style.css
    ============================================================ */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -224,11 +224,11 @@ h1.hero-name {
 
 .tech-column.col-1 .tech-card,
 .tech-column.col-2 .tech-card {
-  height: 10.93vh;
+  height: 7.37vh;
 }
 
 .tech-column.col-3 .tech-card {
-  height: 8.855vh;
+  height: 6.26vh;
 }
 
 .tech-card {
@@ -255,17 +255,19 @@ h1.hero-name {
 }
 
 .tech-card-name {
-  font-size: clamp(12px, 1.1vw, 14.5px);
+  font-size: clamp(11px, 1.0vw, 13.5px);
   font-weight: 600;
   letter-spacing: -0.01em;
   color: #f0f0ee;
+  white-space: nowrap;
 }
 
 .tech-card-badge {
-  font-size: clamp(9px, 0.8vw, 10.5px);
-  letter-spacing: 0.04em;
+  font-size: clamp(8.5px, 0.72vw, 10px);
+  letter-spacing: 0.03em;
   opacity: 0.55;
   font-family: var(--font);
+  white-space: nowrap;
 }
 
 /* ── 3: PROJECTS (Interactive 3x2 Grid Over Boxes) ─────────── */

@@ -778,12 +778,12 @@ const PROJECTS_DATA = [
   },
   {
     num: '03',
-    title: 'NoiseStash',
-    subtitle: 'on-device hearing safety',
-    oneliner: 'On-device Android app for real-time hearing-damage monitoring via TensorFlow Lite.',
-    tags: ['Kotlin', 'Jetpack Compose', 'TensorFlow Lite', 'Room/SQLite'],
-    summary: 'Turns your phone into a lab-grade hearing-damage detector - real-time decibel metering, on-device ML sound classification, OSHA-standard dose tracking, zero cloud involved. Your ears will thank you; your battery might not.',
-    github: 'https://github.com/innocous06/NoiseStash'
+    title: 'NetPulse',
+    subtitle: 'network diagnostics platform',
+    oneliner: 'Self-hosted network diagnostics platform built to get honest bandwidth and jitter numbers, no compression tricks inflating the result.',
+    tags: ['Node.js', 'Express', 'WebSockets', 'Nginx', 'Cloudflare Pages'],
+    summary: "Commercial speed tests lie a little - compression, caching, and ISP peering deals all inflate the number you see. Built an independent diagnostics platform instead: a 64MB buffer of non-compressible random bytes streamed straight to the socket for bandwidth tests, and a 50Hz WebSocket ping-pong loop for latency and jitter that catches micro-bursts a normal HTTP ping completely misses. Deployed behind Nginx with proxy buffering explicitly disabled - the default was quietly smoothing out my own jitter graphs - frontend on Cloudflare Pages, backend on a real VPS.",
+    github: 'https://github.com/innocous06/netPulse'
   },
   {
     num: '04',
@@ -796,20 +796,20 @@ const PROJECTS_DATA = [
   },
   {
     num: '05',
-    title: 'entity-linker',
-    subtitle: 'gpu-accelerated record linkage',
-    oneliner: "GPU-accelerated record-linkage pipeline matching 1M+ noisy listings; built solo after confirming our hardware couldn't clear the bar.",
-    tags: ['Python', 'cuML', 'CuPy', 'MinHash LSH', 'RapidFuzz', 'TF-IDF'],
-    summary: 'A team hackathon challenge to match 1M+ noisy, inconsistently formatted product listings - I ended up building the entire pipeline myself. Two-tier blocking (brand partition + MinHash LSH over 5-gram shingles) cut 500 billion naive comparisons down to under 8 million candidate pairs, then GPU-accelerated TF-IDF cosine similarity and RapidFuzz string scoring ranked what was left, with attribute penalties to stop "pack of 2" from matching "pack of 8." Called the submission off myself once I\'d confirmed our hardware couldn\'t hit the evaluation threshold in time - the pipeline worked, the constraint was compute, not logic.',
-    github: 'https://github.com/innocous06/entity-linker'
+    title: 'HyperShare',
+    subtitle: 'p2p lan transmission engine',
+    oneliner: '87 MB/s peer-to-peer LAN file transfer with zero cloud dependency.',
+    tags: ['Node.js', 'Express', 'Wi-Fi 6', 'pkg Executable'],
+    summary: "AirDrop for people who don't trust Apple or the cloud. Skips TLS handshakes and multipart parsing entirely to hit 87 MB/s straight over Wi-Fi 6 - file transfer with zero patience for anything standing between point A and point B.",
+    github: 'https://github.com/innocous06/HyperShare'
   },
   {
     num: '06',
     title: 'Small Tools, Big Range',
     subtitle: 'cloud pipelines & algorithms',
-    oneliner: 'A grab-bag of self-contained utilities: cloud pipelines, LAN transfer, a URL shortener, solvers, and snake.',
+    oneliner: 'A grab-bag of self-contained utilities: cloud pipelines, a URL shortener, solvers, and snake.',
     tags: ['Python', 'Node.js', 'Aria2', 'Google Drive API', 'C', 'Terminal/CLI'],
-    summary: 'Not every project needs to be a thesis. These are the "I had a problem at 1am and fixed it before going to bed" tools - a cloud pipeline that pulls from OneDrive and Google Drive and handles Cloudflare\'s attitude problem along the way, a LAN file-transfer tool that skips TLS handshakes entirely to hit 87 MB/s over Wi-Fi 6, a self-hosted URL shortener running in production behind Nginx with real TLS, a maze generator that solves its own mazes, and a terminal snake game with a deque under the hood because arrays felt too slow for a snake. Small, sharp, done.',
+    summary: 'Not every project needs to be a thesis. These are the "I had a problem at 1am and fixed it before going to bed" tools - a cloud pipeline that pulls from OneDrive and Google Drive and handles Cloudflare\'s attitude problem along the way, a self-hosted URL shortener running in production behind Nginx with real TLS, a maze generator that solves its own mazes, and a terminal snake game with a deque under the hood because arrays felt too slow for a snake. Small, sharp, done.',
     github: 'https://github.com/innocous06'
   }
 ];

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Not Found</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico?v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png?v=4">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/icons/favicon.png?v=4">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000000;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Background ASCII Canvas */
+        #ascii-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: 1;
+            pointer-events: auto;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            position: relative;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .nav-inner {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            pointer-events: auto;
+            opacity: 0.9;
+            transition: opacity 0.15s ease;
+        }
+
+        .nav-logo:hover {
+            opacity: 1;
+        }
+
+        .nav-logo::after {
+            content: '_';
+            animation: blink 1s step-end infinite;
+            color: var(--text-muted);
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .nav-tag {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        /* Main layout container */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 10;
+            pointer-events: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        footer a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 640px) {
+            header {
+                padding: 1.2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Interactive ASCII Matrix Canvas -->
+    <canvas id="ascii-canvas" aria-label="404 Not Found ASCII Animation"></canvas>
+
+    <header>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">~/404</a>
+            <span class="nav-tag">[ERR_NOT_FOUND]</span>
+        </div>
+    </header>
+
+    <main role="main"></main>
+
+    <footer>
+        <a href="https://600266.xyz">600266.xyz</a>
+        <span>&copy; 2026</span>
+    </footer>
+
+    <script>
+    (function() {
+        const canvas = document.getElementById('ascii-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Character sets
+        const denseChars = ['#', '@', '%', '4', '0', '&', '$', '8', 'W', 'M', '*', '='];
+        const ambientChars = ['.', ':', '·', '+', '~', '-', '\'', ' '];
+
+        // Grid sizing
+        const cellW = 12;
+        const cellH = 18;
+        let cols = 0;
+        let rows = 0;
+
+        // Interaction state
+        let mouseX = -9999;
+        let mouseY = -9999;
+        let targetMouseX = -9999;
+        let targetMouseY = -9999;
+        let frameCount = 0;
+
+        // Offscreen sampling canvas for the digits "404"
+        const offCanvas = document.createElement('canvas');
+        const offCtx = offCanvas.getContext('2d', { willReadFrequently: true });
+        let textMask = null;
+
+        function updateOffscreenMask() {
+            offCanvas.width = cols;
+            offCanvas.height = rows;
+
+            offCtx.fillStyle = '#000000';
+            offCtx.fillRect(0, 0, cols, rows);
+
+            // Calculate font size to fit "404" centered across columns and rows
+            const targetCharHeight = Math.floor(Math.min(rows * 0.48, cols * 0.32));
+            const fontSize = Math.max(16, targetCharHeight);
+
+            offCtx.font = '900 ' + fontSize + 'px "JetBrains Mono", monospace';
+            offCtx.textAlign = 'center';
+            offCtx.textBaseline = 'middle';
+            offCtx.fillStyle = '#ffffff';
+
+            const centerY = Math.floor(rows / 2);
+            offCtx.fillText('404', Math.floor(cols / 2), centerY);
+
+            const imgData = offCtx.getImageData(0, 0, cols, rows);
+            textMask = new Uint8Array(cols * rows);
+            for (let i = 0; i < textMask.length; i++) {
+                textMask[i] = imgData.data[i * 4]; // Red channel represents alpha mask
+            }
+        }
+
+        function resize() {
+            const dpr = window.devicePixelRatio || 1;
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+
+            canvas.width = Math.floor(w * dpr);
+            canvas.height = Math.floor(h * dpr);
+
+            ctx.scale(dpr, dpr);
+
+            cols = Math.ceil(w / cellW);
+            rows = Math.ceil(h / cellH);
+
+            updateOffscreenMask();
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        // Mouse tracking for reactive ASCII distortion
+        window.addEventListener('mousemove', function(e) {
+            targetMouseX = e.clientX;
+            targetMouseY = e.clientY;
+        });
+
+        window.addEventListener('mouseleave', function() {
+            targetMouseX = -9999;
+            targetMouseY = -9999;
+        });
+
+        // Touch support
+        window.addEventListener('touchmove', function(e) {
+            if (e.touches && e.touches.length > 0) {
+                targetMouseX = e.touches[0].clientX;
+                targetMouseY = e.touches[0].clientY;
+            }
+        }, { passive: true });
+
+        window.addEventListener('touchend', function() {
+            targetMouseX = -9999;
+            targetMouseY = -9999;
+        });
+
+        function render() {
+            frameCount++;
+
+            // Smooth mouse interpolation
+            mouseX += (targetMouseX - mouseX) * 0.15;
+            mouseY += (targetMouseY - mouseY) * 0.15;
+
+            // Clear screen to pure black
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+
+            ctx.font = '13px "JetBrains Mono", monospace';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            if (!textMask) {
+                requestAnimationFrame(render);
+                return;
+            }
+
+            const mouseCol = mouseX / cellW;
+            const mouseRow = mouseY / cellH;
+            const radius = 12; // Radius of mouse disturbance in grid units
+
+            for (let r = 0; r < rows; r++) {
+                const y = r * cellH + cellH / 2;
+                const rowOffset = r * cols;
+
+                for (let c = 0; c < cols; c++) {
+                    const x = c * cellW + cellW / 2;
+                    const maskVal = textMask[rowOffset + c];
+
+                    // Distance to mouse
+                    const dx = c - mouseCol;
+                    const dy = r - mouseRow;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    const mouseInfluence = Math.max(0, 1 - dist / radius);
+
+                    if (maskVal > 60) {
+                        // INSIDE "404": Pure white ASCII
+                        let charIndex = Math.floor((c * 7 + r * 13 + frameCount * 0.05) % denseChars.length);
+                        if (mouseInfluence > 0) {
+                            // Scramble slightly when hovered
+                            charIndex = Math.floor((charIndex + frameCount + dist * 3) % denseChars.length);
+                        }
+
+                        const ch = denseChars[charIndex];
+
+                        // Shimmer opacity
+                        const shimmer = Math.sin(c * 0.3 + r * 0.2 + frameCount * 0.08) * 0.08;
+                        const opacity = Math.min(1, Math.max(0.75, (maskVal / 255) + shimmer + mouseInfluence * 0.2));
+
+                        ctx.fillStyle = 'rgba(255, 255, 255, ' + opacity + ')';
+                        ctx.fillText(ch, x, y);
+                    } else {
+                        // AMBIENT BACKGROUND: Dim subtle characters
+                        if (mouseInfluence > 0.02) {
+                            // Activated by mouse wave
+                            const charIndex = Math.floor((c * 3 + r * 5 + frameCount * 0.2) % ambientChars.length);
+                            const ch = ambientChars[charIndex];
+                            const opacity = (mouseInfluence * 0.45);
+                            ctx.fillStyle = 'rgba(255, 255, 255, ' + opacity + ')';
+                            ctx.fillText(ch, x, y);
+                        } else if ((c * 17 + r * 31) % 7 === 0) {
+                            // Sparse background stars / grid markers
+                            const pulse = Math.sin(c * 0.15 + r * 0.25 + frameCount * 0.03) * 0.02;
+                            const opacity = Math.max(0.02, 0.05 + pulse);
+                            const ch = ambientChars[(c + r) % ambientChars.length];
+                            ctx.fillStyle = 'rgba(255, 255, 255, ' + opacity + ')';
+                            ctx.fillText(ch, x, y);
+                        }
+                    }
+                }
+            }
+
+            requestAnimationFrame(render);
+        }
+
+        // Detect prefers-reduced-motion
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (mediaQuery.matches) {
+            // Render single frame without continuous loop
+            setTimeout(function() {
+                render();
+            }, 50);
+        } else {
+            requestAnimationFrame(render);
+        }
+    })();
+    </script>
+</body>
+</html>

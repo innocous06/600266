@@ -6,21 +6,21 @@
     <meta name="theme-color" content="#000000">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Dharmanshu Kumar</title>
-    <meta name="description" content="Portfolio of Dharmanshu Kumar">
-    <meta name="keywords" content="Dharmanshu Kumar, innocous06, portfolio, developer, SRMIST, full-stack, machine learning">
+    <meta name="description" content="Portfolio of Dharmanshu Kumar. Distributed systems, low-level networking, and high-throughput data transport.">
+    <meta name="keywords" content="Dharmanshu Kumar, innocous06, portfolio, developer, SRMIST, distributed systems, raft, networking, go, rust">
     <meta name="author" content="Dharmanshu Kumar">
-    <meta property="og:title" content="Dharmanshu Kumar — Developer Portfolio">
-    <meta property="og:description" content="CSE undergraduate at SRMIST. Database architecture, low-level networking, and cloud automation pipelines.">
+    <meta property="og:title" content="Dharmanshu Kumar">
+    <meta property="og:description" content="CSE undergraduate at SRMIST. Distributed consensus, low-level networking, and cloud automation pipelines.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://600266.xyz">
+    <meta property="og:url" content="https://600266.xyz/portfolio">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dharmanshu Kumar — Developer Portfolio">
-    <meta name="twitter:description" content="CSE undergraduate at SRMIST. Database architecture, low-level networking, and cloud automation pipelines.">
+    <meta name="twitter:title" content="Dharmanshu Kumar">
+    <meta name="twitter:description" content="CSE undergraduate at SRMIST. Distributed consensus, low-level networking, and cloud automation pipelines.">
     <link rel="canonical" href="https://600266.xyz/portfolio">
-    <link rel="icon" type="image/x-icon" href="favicon.ico?v=4">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=4">
-    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png?v=4">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=4">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico?v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png?v=4">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/icons/favicon.png?v=4">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -299,6 +299,16 @@
             letter-spacing: -0.5px;
             margin-bottom: 0.75rem;
             color: var(--text-primary);
+        }
+
+        .section-title:last-child {
+            margin-bottom: 2.75rem;
+        }
+
+        #contact .section-title {
+            font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+            line-height: 1.4;
+            max-width: 680px;
         }
 
         .section-subtitle {
@@ -622,6 +632,20 @@
             border-radius: 5px;
             background: var(--accent-dim);
         }
+        .project-meta-top {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .project-lang {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--neutral-400);
+            padding: 0.3rem 0.6rem;
+            border: 1px solid var(--border-medium);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.02);
+        }
         .project-links { display: flex; gap: 0.35rem; }
         .project-link {
             width: 32px; height: 32px;
@@ -902,9 +926,9 @@
             </h1>
             <p class="hero-alias"><span>@innocous06</span> / sophomore, cse</p>
             <p class="hero-tagline">
-                I build things for the web, engineer custom networking protocols, and care 
-                about writing code that's <strong>fast</strong>, <strong>secure</strong>, 
-                and solves actual problems.
+                I build distributed systems, custom networking protocols, and tools that avoid 
+                unnecessary dependencies. Big fan of knowing why things break, what happens when the network lies, 
+                and building the layer underneath.
             </p>
             <div class="hero-typed-line">
                 <span id="typed-output"></span><span class="cursor"></span>
@@ -929,15 +953,13 @@
         <div class="about-grid">
             <div class="about-text reveal reveal-d1">
                 <p>
-                    I'm <span class="hl">Dharmanshu Kumar</span> — a Computer Science undergraduate 
-                    student at <span class="hl">SRMIST</span>. Most people know me as 
-                    <span class="hl">innocous06</span> online.
+                    I'm mildly obsessed with the idea that most software has too many dependencies and too little control. So I started building the layer underneath - the networking, the databases, the parts nobody thinks about until they break.
                 </p>
                 <p>
-                    I specialize in database architecture and low-level networking systems. I'm experienced in designing relational & NoSQL data schemas, real-time sync engines, and zero-dependency TCP/UDP VPN tunnelling protocols.
+                    I like problems where "it works" isn't the finish line - where you also need to know why it works, what happens when the network lies to you, or what breaks first under load. That has led me down a lot of rabbit holes: kernel-level packet tunneling, Raft distributed consensus, and enough self-hosted tools that I've basically become my own IT department.
                 </p>
                 <p>
-                    Outside of classes, I spend my time engineering high-throughput LAN streaming tools, automating cloud data pipelines, and maintaining custom VPN nodes on Oracle Cloud Infrastructure.
+                    If it involves networking, databases, or an excuse to avoid a bloated dependency, I've probably already built it - right alongside an unreasonable number of small tools nobody asked for. Outside coursework at <span class="hl">SRMIST</span>, I build things because it's genuinely fun, not to chase a personality around a GitHub graph. Based in the Himalayas, which does wonders for perspective when code doesn't compile.
                 </p>
             </div>
             <div class="about-details reveal reveal-d2">
@@ -946,7 +968,7 @@
                     <div class="detail-key">Branch</div>
                 </div>
                 <div class="detail-card">
-                    <div class="detail-val">2nd yr</div>
+                    <div class="detail-val">Sophomore</div>
                     <div class="detail-key">Standing</div>
                 </div>
                 <div class="detail-card">
@@ -965,53 +987,57 @@
     <section class="section" id="skills">
         <div class="reveal">
             <span class="section-label">02 / stack</span>
-            <h2 class="section-title">Technologies I use</h2>
-            <p class="section-subtitle">Things I'm comfortable building with.</p>
+            <h2 class="section-title">Things I actually use, minus the fluff.</h2>
         </div>
         <div class="skills-container">
             <div class="reveal reveal-d1">
-                <div class="skill-cat-label">Database & Data</div>
-                <div class="skills-grid">
-                    <div class="skill-chip">SQL</div>
-                    <div class="skill-chip">PostgreSQL</div>
-                    <div class="skill-chip">Firestore (NoSQL)</div>
-                    <div class="skill-chip">Real-Time Sync</div>
-                    <div class="skill-chip">ACID Transactions</div>
-                </div>
-            </div>
-            <div class="reveal reveal-d2">
-                <div class="skill-cat-label">Networking & Security</div>
-                <div class="skills-grid">
-                    <div class="skill-chip">TCP/UDP Sockets</div>
-                    <div class="skill-chip">mTLS Auth</div>
-                    <div class="skill-chip">DPI Evasion</div>
-                    <div class="skill-chip">VPN Protocols</div>
-                </div>
-            </div>
-            <div class="reveal reveal-d3">
-                <div class="skill-cat-label">Languages & Cloud</div>
+                <div class="skill-cat-label">Systems &amp; Networking</div>
                 <div class="skills-grid">
                     <div class="skill-chip">Go</div>
                     <div class="skill-chip">Rust</div>
-                    <div class="skill-chip">Python</div>
                     <div class="skill-chip">C / C++</div>
-                    <div class="skill-chip">JavaScript</div>
-                    <div class="skill-chip">TypeScript</div>
-                    <div class="skill-chip">OCI VPS</div>
+                    <div class="skill-chip">TCP/UDP Sockets</div>
+                    <div class="skill-chip">mTLS Validation</div>
+                    <div class="skill-chip">DPI Evasion</div>
+                    <div class="skill-chip">Wintun / SOCKS5</div>
+                    <div class="skill-chip">QUIC</div>
+                </div>
+            </div>
+            <div class="reveal reveal-d2">
+                <div class="skill-cat-label">Consensus &amp; Storage</div>
+                <div class="skills-grid">
+                    <div class="skill-chip">Raft Consensus</div>
+                    <div class="skill-chip">Checksummed WAL</div>
+                    <div class="skill-chip">CRC32 Verification</div>
+                    <div class="skill-chip">PostgreSQL</div>
+                    <div class="skill-chip">Firestore NoSQL</div>
+                    <div class="skill-chip">Relational Schemas</div>
+                </div>
+            </div>
+            <div class="reveal reveal-d3">
+                <div class="skill-cat-label">Cloud &amp; Infrastructure</div>
+                <div class="skills-grid">
+                    <div class="skill-chip">Linux Systems</div>
+                    <div class="skill-chip">Oracle Cloud (OCI)</div>
                     <div class="skill-chip">Azure APIs</div>
-                    <div class="skill-chip">Linux</div>
+                    <div class="skill-chip">Nginx Reverse Proxy</div>
+                    <div class="skill-chip">Cloudflare Pages</div>
+                    <div class="skill-chip">systemd Services</div>
+                    <div class="skill-chip">Bash</div>
                 </div>
             </div>
             <div class="reveal reveal-d4">
-                <div class="skill-cat-label">Full-Stack</div>
+                <div class="skill-cat-label">Web &amp; Platforms</div>
                 <div class="skills-grid">
+                    <div class="skill-chip">TypeScript</div>
+                    <div class="skill-chip">JavaScript</div>
+                    <div class="skill-chip">Python</div>
+                    <div class="skill-chip">Kotlin</div>
+                    <div class="skill-chip">Node.js</div>
                     <div class="skill-chip">React.js</div>
                     <div class="skill-chip">Next.js</div>
-                    <div class="skill-chip">Node.js</div>
-                    <div class="skill-chip">Express</div>
-                    <div class="skill-chip">HTML</div>
-                    <div class="skill-chip">CSS</div>
-                    <div class="skill-chip">Firebase</div>
+                    <div class="skill-chip">FastAPI</div>
+                    <div class="skill-chip">gomobile</div>
                 </div>
             </div>
         </div>
@@ -1022,85 +1048,157 @@
         <div class="reveal">
             <span class="section-label">03 / work</span>
             <h2 class="section-title">Selected projects</h2>
-            <p class="section-subtitle">Some things I've built. More on GitHub.</p>
+            <p class="section-subtitle">Real implementations, verified against chaos harnesses and hostile networks.</p>
         </div>
         <div class="projects-grid">
             <div class="project-card reveal reveal-d1">
                 <div class="project-header">
-                    <span class="project-idx">01</span>
+                    <div class="project-meta-top">
+                        <span class="project-idx">01</span>
+                        <span class="project-lang">Go</span>
+                    </div>
                     <div class="project-links">
-                        <a href="https://github.com/innocous06/tunnel-prot-1" target="_blank" rel="noopener" class="project-link" aria-label="Source code" title="Source">
+                        <a href="https://github.com/innocous06/raft-kv" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Source code" title="Source">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                         </a>
                     </div>
                 </div>
-                <h3 class="project-title">tunnel-prot-1</h3>
+                <h3 class="project-title">raft-kv</h3>
                 <p class="project-desc">
-                    Zero-dependency encrypted TCP/UDP VPN tunnelling protocol. Uses mTLS auth and compiled native Android binaries, achieving 20-50ms latencies on OCI nodes.
+                    Distributed key-value store implementing Raft consensus from first principles. Features leader election, log replication, snapshot installation, and a checksummed write-ahead log with crash recovery. Verified against a chaos harness that aggressively kills nodes mid-write to prove zero stale reads.
                 </p>
                 <div class="project-tech">
                     <span>Go</span>
-                    <span>VPN</span>
-                    <span>mTLS</span>
-                    <span>gomobile</span>
+                    <span>Raft Consensus</span>
+                    <span>WAL</span>
+                    <span>CRC32</span>
+                    <span>Chaos Testing</span>
                 </div>
             </div>
 
             <div class="project-card reveal reveal-d2">
                 <div class="project-header">
-                    <span class="project-idx">02</span>
-                    <div class="project-links">
-                        <a href="https://github.com/innocous06/HyperShare" target="_blank" rel="noopener" class="project-link" aria-label="Source code" title="Source">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                    <div class="project-meta-top">
+                        <span class="project-idx">02</span>
+                        <span class="project-lang">Rust · Go</span>
                     </div>
-                </div>
-                <h3 class="project-title">HyperShare</h3>
-                <p class="project-desc">
-                    High-speed local file transfer system for peer-to-peer Wi-Fi 6 streaming. Bypasses TLS overheads to achieve sustained 2 – 87 MB/s throughput.
-                </p>
-                <div class="project-tech">
-                    <span>Node.js</span>
-                    <span>Express</span>
-                    <span>Wi-Fi 6</span>
-                    <span>pkg</span>
-                </div>
-            </div>
-
-            <div class="project-card reveal reveal-d3">
-                <div class="project-header">
-                    <span class="project-idx">03</span>
                     <div class="project-links">
-                        <a href="https://github.com/innocous06/shadowlink" target="_blank" rel="noopener" class="project-link" aria-label="Source code" title="Source">
+                        <a href="https://github.com/innocous06/shadowlink" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Source code" title="Source">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                         </a>
                     </div>
                 </div>
                 <h3 class="project-title">shadowlink</h3>
                 <p class="project-desc">
-                    Memory-safe, low-overhead networking utility for point-to-point secure VPN tunnelling. Uses a modular Cargo workspace with auto certificate generation.
+                    DPI-resistant VPN tunneling suite designed to slip past deep packet inspection using TLS SNI camouflage and mTLS authentication. Features a multi-threaded Rust client with Wintun integration and SOCKS5 UDP relay, alongside a cross-platform Go/gomobile Android daemon.
                 </p>
                 <div class="project-tech">
                     <span>Rust</span>
-                    <span>TLS</span>
-                    <span>Cargo</span>
-                    <span>VPN</span>
+                    <span>Go</span>
+                    <span>Wintun</span>
+                    <span>mTLS</span>
+                    <span>SOCKS5</span>
+                    <span>gomobile</span>
+                </div>
+            </div>
+
+            <div class="project-card reveal reveal-d3">
+                <div class="project-header">
+                    <div class="project-meta-top">
+                        <span class="project-idx">03</span>
+                        <span class="project-lang">Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/innocous06/NetPulse" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Source code" title="Source">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <h3 class="project-title">NetPulse</h3>
+                <p class="project-desc">
+                    Self-hosted network diagnostics platform built because commercial speed tests cheat with compression, caching, and peering. Streams 64MB of non-compressible random bytes for honest bandwidth numbers, and runs a 50Hz WebSocket ping loop to catch micro-burst latency spikes normal pings miss.
+                </p>
+                <div class="project-tech">
+                    <span>Node.js</span>
+                    <span>WebSockets</span>
+                    <span>Express</span>
+                    <span>Nginx</span>
+                    <span>Cloudflare Pages</span>
                 </div>
             </div>
 
             <div class="project-card reveal reveal-d4">
                 <div class="project-header">
-                    <span class="project-idx">04</span>
+                    <div class="project-meta-top">
+                        <span class="project-idx">04</span>
+                        <span class="project-lang">Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/innocous06/HyperShare" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Source code" title="Source">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <h3 class="project-title">HyperShare</h3>
+                <p class="project-desc">
+                    High-speed peer-to-peer file transfer engine engineered for local Wi-Fi 6 networks. Strips out cloud relays and pointless encryption overheads on trusted LANs to sustain 2 to 87 MB/s throughput. Packaged as a single standalone executable via pkg.
+                </p>
+                <div class="project-tech">
+                    <span>Node.js</span>
+                    <span>Express</span>
+                    <span>Wi-Fi 6</span>
+                    <span>P2P</span>
+                    <span>pkg</span>
+                </div>
+            </div>
+
+            <div class="project-card reveal reveal-d1">
+                <div class="project-header">
+                    <div class="project-meta-top">
+                        <span class="project-idx">05</span>
+                        <span class="project-lang">TypeScript · Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/innocous06" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Source code" title="Source">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <h3 class="project-title">StockFlow AI</h3>
+                <p class="project-desc">
+                    Disaster-resilient supply chain engine built for hackathon conditions where the network actively dies. Pairs an offline-capable mobile driver app with local queue fallback and GPS telemetry, backed by a FastAPI hazard routing service integrated with Gemini API.
+                </p>
+                <div class="project-tech">
+                    <span>TypeScript</span>
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>Leaflet</span>
+                    <span>Gemini API</span>
+                </div>
+            </div>
+
+            <div class="project-card reveal reveal-d2">
+                <div class="project-header">
+                    <div class="project-meta-top">
+                        <span class="project-idx">06</span>
+                        <span class="project-lang">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/innocous06" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Source code" title="Source">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
                 </div>
                 <h3 class="project-title">Cloud Pipeline Engine</h3>
                 <p class="project-desc">
-                    Automated data extraction and ingestion engine utilizing subprocessed Aria2 instances and dynamic rsync workflows for Microsoft 365 / Azure APIs.
+                    High-throughput automated ingestion pipeline that orchestrates multi-connection downloads via subprocessed Aria2 instances. Interacts with Microsoft 365, Azure, and Google Drive APIs with token refresh, dynamic chunk allocation, and automated retries reaching ~90 MB/s uplink.
                 </p>
                 <div class="project-tech">
                     <span>Python</span>
-                    <span>Azure API</span>
                     <span>Aria2</span>
+                    <span>Azure APIs</span>
                     <span>Subprocess</span>
+                    <span>Automation</span>
                 </div>
             </div>
         </div>
@@ -1111,34 +1209,43 @@
         <div class="reveal">
             <span class="section-label">04 / experience</span>
             <h2 class="section-title">Where I've been</h2>
-            <p class="section-subtitle">Roles, internships, and things I've contributed to.</p>
+            <p class="section-subtitle">Milestones, projects, and academic background.</p>
         </div>
         <div class="timeline">
             <div class="timeline-item reveal reveal-d1">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">2026</div>
-                <div class="timeline-role">Systems Engineer (Personal Project)</div>
-                <div class="timeline-company">tunnel-prot-1</div>
+                <div class="timeline-role">Distributed Systems &amp; Consensus Internals</div>
+                <div class="timeline-company">Personal Research &amp; Implementations</div>
                 <p class="timeline-desc">
-                    Engineered a zero-dependency encrypted TCP/UDP VPN protocol in Go to bypass DPI censorship. Managed 20-50ms latencies on domestic Oracle VPS nodes.
+                    Implemented Raft consensus from first principles in Go. Built CRC32 checksummed write-ahead logging with crash recovery, snapshot compaction, and verified state consistency under simulated network partitions.
                 </p>
             </div>
             <div class="timeline-item reveal reveal-d2">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">2025 — 2026</div>
-                <div class="timeline-role">Full-Stack Architect (Freelance/Personal)</div>
-                <div class="timeline-company">Property Management System</div>
+                <div class="timeline-date">2025 - 2026</div>
+                <div class="timeline-role">Networking &amp; Kernel VPN Systems</div>
+                <div class="timeline-company">shadowlink &amp; tunnel</div>
                 <p class="timeline-desc">
-                    Architected a multi-role web platform utilizing Firebase Firestore for real-time document database sync, strict RBAC, and transactional billing ledgers.
+                    Engineered DPI-resistant VPN tunnel protocols across Rust and Go. Integrated Wintun driver virtual adapters, SOCKS5 UDP relay, mTLS handshakes, and compiled native Android daemons with gomobile.
                 </p>
             </div>
             <div class="timeline-item reveal reveal-d3">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">Aug 2025 — 2029</div>
-                <div class="timeline-role">B.Tech CSE</div>
+                <div class="timeline-date">2025 - 2026</div>
+                <div class="timeline-role">LAN Transport &amp; Network Diagnostics</div>
+                <div class="timeline-company">HyperShare &amp; NetPulse</div>
+                <p class="timeline-desc">
+                    Developed 87 MB/s local P2P streaming systems over Wi-Fi 6 without cloud relays. Built self-hosted network telemetry tooling using 50Hz WebSocket ping loops to detect latency jitter.
+                </p>
+            </div>
+            <div class="timeline-item reveal reveal-d4">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025 - 2029</div>
+                <div class="timeline-role">B.Tech in Computer Science and Engineering</div>
                 <div class="timeline-company">SRM Institute of Science and Technology</div>
                 <p class="timeline-desc">
-                    Specializing in Database Management Systems, Computer Networks, Operating Systems, and Distributed Systems.
+                    Undergraduate coursework in Operating Systems, Computer Networks, Database Management Systems, and Distributed Computing. Building the layers underneath between classes.
                 </p>
             </div>
         </div>
@@ -1148,8 +1255,7 @@
     <section class="section" id="contact">
         <div class="reveal">
             <span class="section-label">05 / contact</span>
-            <h2 class="section-title">Get in touch</h2>
-            <p class="section-subtitle">Have an idea, a question, or just want to connect — my inbox is open.</p>
+            <h2 class="section-title">Nothing clever here. Just say what you need; I check messages more reliably than my sleep schedule.</h2>
         </div>
         <div class="contact-wrapper">
             <div class="contact-links reveal reveal-d1">
@@ -1180,6 +1286,15 @@
                         <span class="contact-link-value">dharmanshu@duck.com</span>
                     </div>
                 </a>
+                <a href="assets/portfolio/resume.pdf" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--neutral-400)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <div class="contact-link-text">
+                        <span class="contact-link-label">Resume</span>
+                        <span class="contact-link-value">view / download</span>
+                    </div>
+                </a>
             </div>
             <div class="reveal reveal-d2">
                 <div class="terminal-card">
@@ -1187,15 +1302,17 @@
                         <div class="terminal-dot r"></div>
                         <div class="terminal-dot y"></div>
                         <div class="terminal-dot g"></div>
-                        <span class="terminal-title">zsh — 80x24</span>
+                        <span class="terminal-title">zsh - 80x24</span>
                     </div>
                     <div class="terminal-body">
                         <span class="p">~</span> <span class="c">whoami</span><br>
-                        <span class="o">dharmanshu-kumar</span><br><br>
-                        <span class="p">~</span> <span class="c">cat</span> <span class="f">location</span><br>
-                        <span class="o">India</span><br><br>
+                        <span class="o">innocous06</span><br><br>
                         <span class="p">~</span> <span class="c">cat</span> <span class="f">status</span><br>
-                        <span class="o">looking for internships & collaborations</span><br><br>
+                        <span class="o">building the layer underneath; probably avoiding an npm package</span><br><br>
+                        <span class="p">~</span> <span class="c">cat</span> <span class="f">focus.txt</span><br>
+                        <span class="o">- Distributed Systems &amp; Consensus Protocols</span><br>
+                        <span class="o">- Low-Level Networking &amp; DPI Evasion</span><br>
+                        <span class="o">- High-Throughput Data Transport</span><br><br>
                         <span class="p">~</span> <span class="c">curl</span> <span class="f">600266.xyz</span><br>
                         <span class="o">you are here</span>
                     </div>
@@ -1205,7 +1322,6 @@
     </section>
 
     <!-- FOOTER -->
-        <!-- FOOTER -->
     <footer class="site-footer" style="width:100%;height:60px;display:flex;align-items:center;justify-content:center;gap:0.45rem;font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);border-top:1px solid rgba(255,255,255,0.045);position:relative;z-index:10;">
         <a href="https://600266.xyz" style="color:inherit;text-decoration:none;">600266.xyz</a> <span>&copy; 2026</span>
     </footer>
@@ -1295,11 +1411,11 @@
         /* ---- Typing ---- */
         (function() {
             const phrases = [
-                '> database architecture & modeling',
-                '> custom tcp/udp vpn protocols',
-                '> cloud infrastructure (oci vps)',
-                '> systems that scale',
-                '> secure data streaming',
+                '> developing the obv',
+                '> raft consensus & chaos testing',
+                '> dpi-resistant vpn tunnels & mtls',
+                '> 87 mb/s lan streaming with zero cloud',
+                '> self-hosting until i am my own it department',
             ];
             const el = document.getElementById('typed-output');
             let pi = 0, ci = 0, del = false, delay = 100;

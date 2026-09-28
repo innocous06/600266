@@ -669,7 +669,7 @@ h1.hero-name {
 .mf-name  { font-size: clamp(1.5rem, 7vw, 2.2rem); font-weight: 700; }
 .mf-tag   { font-size: 0.85rem; opacity: 0.5; margin-top: 0.5rem; font-style: italic; }
 .mf-note  { font-size: 0.75rem; opacity: 0.3; margin-top: 2rem; }
-.mf-links { display: flex; gap: 2rem; margin-top: 1rem; }
+.mf-links { display: flex; gap: 2rem; margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
 .mf-links a { color: inherit; font-size: 0.9rem; text-decoration: none; border-bottom: 1px solid; padding-bottom: 2px; }
 
 @media (max-width: 920px), (max-height: 560px) {
